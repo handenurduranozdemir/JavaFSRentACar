@@ -1,0 +1,33 @@
+<app-navbar
+    [title]="navTitle"
+    [navItems]="navItems"
+    [endContentTemplate]="navbarEndContent"
+  >
+    <!-- ng-cont -->
+    <!-- <p>Test  -->
+    <ng-template #navbarEndContent>
+      <button
+        class="btn btn-outline-danger"
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#loginModal"
+        [routerLink]="['/login']"
+        (click)="logout()"
+
+      >
+        Logout
+      </button>
+      <button
+      class="btn btn-outline-primary"
+      type="button"
+      data-bs-toggle="modal"
+      data-bs-target="#loginModal"
+      [routerLink]="['/customer/dashboard']"
+    >
+      Dashboard
+    </button>
+
+    </ng-template>
+  </app-navbar>
+<p>customer works!</p>,
+<router-outlet></router-outlet>
