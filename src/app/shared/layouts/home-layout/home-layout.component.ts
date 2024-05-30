@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavItem, NavTitle, NavbarComponent } from '../../components/navbar/navbar.component';
-import { FooterComponent } from '../../components/footer.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ export class HomeLayoutComponent {
   navItems: NavItem[] = [
     { label: 'Home', link: '/' },
     { label: 'About', link: '/about' },
-    { label: 'Contact', link: 'mailto:handenurduran@mail.com' },
+    { label: 'Contact', link: 'mailto:handenurduran@gmail.com' },
     { label: 'Management', link: '/management' },
     { label: 'Brands Management', link:'/management/brands' },
     { label: 'Models Management', link: '/management/models'},

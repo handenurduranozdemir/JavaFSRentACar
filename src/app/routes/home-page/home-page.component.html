@@ -1,4 +1,4 @@
-<app-home-layout>
+<app-home-layout class="background-image-container">
     <div class="d-flex flex-column justify-content-center align-items-center app-overlay">
         <h1>Welcome to our Rental Gallery!</h1>
         <app-button>View Models</app-button>
@@ -12,9 +12,17 @@
                 ></app-brands-list-menu>
             </div>
             <div class="col-lg-8">
-                
-                <!-- Angular Template Pipe: template tarafında veriyi terkar elden geçirip yeni veri oluşturmızı sağlar. -->
                 <app-models-card-list [brandId]="selectedBrandId"></app-models-card-list>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="d-flex flex-wrap justify-content-center">
+                <div class="col-md-3">
+                    <app-menu-copy [items]="carsMenuItems"></app-menu-copy>
+                </div>
             </div>
         </div>
     </div>

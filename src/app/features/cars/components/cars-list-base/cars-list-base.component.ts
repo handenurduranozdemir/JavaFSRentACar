@@ -17,8 +17,8 @@ export class CarsListBaseComponent {
   initialSelectedCarIndex: number | null = null;
 
   constructor(
-    private carsService: CarsControllerService,
-    private change: ChangeDetectorRef
+    protected carsService: CarsControllerService,
+    protected change: ChangeDetectorRef
   ) {}
 
   ngOnInit() {

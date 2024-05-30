@@ -3,3 +3,52 @@ ul {
         background-color: orangered !important;
     }
 }
+
+/* Tüm sayfanın arka plan resmi */
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  :host {
+    display: block;
+    height: 100%;
+    background: url('../assets/imagee.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  /* İçerik stilleri */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin: 0.5em 0;
+  }
+  
+  p {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+  }
+  
+  button {
+    padding: 1em 2em;
+    font-size: 1em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+  }

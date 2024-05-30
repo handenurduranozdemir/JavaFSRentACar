@@ -4,4 +4,24 @@
     .app-overlay {
         height: 25rem;
     }
+
+    .background-image-container {
+        background-image: url('');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    
+    .container {
+        //background-color: rgba(255, 255, 255, 0.9); /* Beyaz arka plan */
+        border: 1px solid #ddd; /* Border çizgisi */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Gölgelendirme */
+        padding: 20px;
+        margin-top: 20px;
+    }
+    
+    .container h1, .container h4, .container p {
+        color: #333; /* Yazı rengi */
+    }
+    
 }

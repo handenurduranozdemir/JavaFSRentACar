@@ -18,7 +18,7 @@ export class ModelListBaseComponent {
   initialSelectedModelIndex: number | null = null;
 
   constructor(
-    private modelService: ModelsControllerService,
+    protected modelService: ModelsControllerService,
     protected change: ChangeDetectorRef
   ) {}
 

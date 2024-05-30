@@ -22,18 +22,30 @@
                       <th scope="col">State</th>
                       <th scope="col"></th>
                     </tr>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col"><input type="text" (input)="applyFilter($event, 'brandName')" placeholder="Filter by Brand Name"></th>
+                      <th scope="col"><input type="text" (input)="applyFilter($event, 'modelId')" placeholder="Filter by Model Id"></th>
+                      <th scope="col"><input type="text" (input)="applyFilter($event, 'modelName')" placeholder="Filter by Model Name"></th>
+                      <th scope="col"><input type="text" (input)="applyFilter($event, 'modelYear')" placeholder="Filter by Model Year"></th>
+                      <th scope="col"><input type="text" (input)="applyFilter($event, 'transmissionName')" placeholder="Filter by Transmission"></th>
+                      <th scope="col"><input type="text" (input)="applyFilter($event, 'fuelName')" placeholder="Filter by Fuel"></th>
+                      <th scope="col"><input type="text" (input)="applyFilter($event, 'plate')" placeholder="Filter by Plate"></th>
+                      <th scope="col"><input type="text" (input)="applyFilter($event, 'dailyPrice')" placeholder="Filter by Daily Price"></th>
+                      <th scope="col"><input type="text" (input)="applyFilter($event, 'state')" placeholder="Filter by State"></th>
+                      <th scope="col"></th>
+                    </tr>
                   </thead>
                   <tbody>
-                    @for (car of cars; track $index) {
-                    <tr>
-                      <th scope="row"> {{ car.id }} </th>
+                    <tr *ngFor="let car of filteredCars; trackBy: trackById">
+                      <th scope="row">{{ car.id }}</th>
                       <td>
-                        <h6 class="mb-1"> {{ car.brandName }}</h6>
-                        <span class="text-secondary fs-7"> Brand </span>
+                        <h6 class="mb-1">{{ car.brandName }}</h6>
+                        <span class="text-secondary fs-7">Brand</span>
                       </td>
                       <td>
-                        <h6 class="mb-1"> {{ car.modelId }} </h6>
-                        <span class="text-secondary fs-7"> Model Id </span>
+                        <h6 class="mb-1">{{ car.modelId }}</h6>
+                        <span class="text-secondary fs-7">Model Id</span>
                       </td>
                       <td>
                         <h6 class="mb-1">{{ car.modelName }}</h6>
@@ -44,45 +56,42 @@
                         <span class="text-secondary fs-7">Model Year</span>
                       </td>
                       <td>
-                        <h6 class="mb-1">{{ car.transmissionName}}</h6>
+                        <h6 class="mb-1">{{ car.transmissionName }}</h6>
                         <span class="text-secondary fs-7">Transmission</span>
                       </td>
                       <td>
-                        <h6 class="mb-1">{{ car.fuelName}}</h6>
+                        <h6 class="mb-1">{{ car.fuelName }}</h6>
                         <span class="text-secondary fs-7">Fuel</span>
                       </td>
                       <td>
                         <h6 class="mb-1">{{ car.plate }}</h6>
                         <span class="text-secondary fs-7">Plate</span>
                       </td>
-                      <td> {{car.dailyPrice | currency}} </td>
+                      <td>{{ car.dailyPrice | currency }}</td>
                       <td>
-                        @if(car.state == 1){
-                        <span class="badge rounded-pill bg-danger">Available</span>
-                        }@else if (car.state == 2) {
-                        <span class="badge rounded-pill bg-success">Rented</span>
-                        }@else if (car.state == 3){
-                        <span class="badge rounded-pill bg-info">Under Maintanence</span>
-                        } 
+                        <span class="badge rounded-pill" [ngClass]="{
+                          'bg-danger': car.state === 1,
+                          'bg-success': car.state === 2,
+                          'bg-info': car.state === 3
+                        }">
+                          {{
+                            car.state === 1 ? 'Available' :
+                            car.state === 2 ? 'Rented' :
+                            car.state === 3 ? 'Under Maintenance' :
+                            ''
+                          }}
+                        </span>
                       </td>
-                        
-                        <td>
-                          <div class="d-flex justify-content-end">
-                            <app-button 
-                              [routerLink]="['/management/cars/edit', car.id]" 
-                              variant="warning">
-                              Edit
-                            </app-button>
-                            <app-button
-                              class="ms-3" 
-                              (click)="deleteCar(car.id!)"  
-                              variant="danger">
-                              Delete
-                            </app-button>
-                          </div>
-                        </td>
+                      <td>
+                        <div class="d-flex justify-content-end">
+                          <app-button [routerLink]="['/management/cars/edit', car.id]" variant="warning">Edit</app-button>
+                          <app-button class="ms-3" (click)="deleteCar(car.id!)" variant="danger">Delete</app-button>
+                        </div>
+                      </td>
                     </tr>
-                    }
+                    <tr *ngIf="filteredCars.length === 0">
+                      <td colspan="11" class="text-center">No cars available</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
