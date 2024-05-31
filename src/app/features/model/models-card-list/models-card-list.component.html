@@ -1,6 +1,6 @@
 <div class="row">
     @for (model of filteredModels; track $index) {
-        <app-card
+        <app-card 
         [title]="model.name!"
         [text]="getModelCardText(model)"
         buttonLabel="Rent"

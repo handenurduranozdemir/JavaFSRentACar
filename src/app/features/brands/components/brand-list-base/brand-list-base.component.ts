@@ -18,7 +18,7 @@ export class BrandsListBaseComponent {
   initialSelectedBrandIndex: number | null = null;
 
     // brandsService: BrandsService;
-    constructor(private brandsService: BrandsService, private change: ChangeDetectorRef) {
+    constructor(private brandsService: BrandsService, protected change: ChangeDetectorRef) {
       // this.brandsService = brandsService;
     }
 

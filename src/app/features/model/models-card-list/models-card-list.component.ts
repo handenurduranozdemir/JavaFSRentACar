@@ -15,6 +15,8 @@ import { CardComponent } from '../../../shared/components/card/card.component';
 export class ModelsCardListComponent extends ModelListBaseComponent implements OnInit{
   @Input() brandId: number | null = null;
 
+  
+  
   get filteredModels(): GetAllModelResponse[] {
     let newList: GetAllModelResponse[] = this.models;
 

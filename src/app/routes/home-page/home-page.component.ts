@@ -25,6 +25,13 @@ import { MenuComponentCopy } from "../../shared/components/menu copy/menu.compon
     ]
 })
   export class HomePageComponent {
+    menuVisible: boolean = false;
+
+    toggleMenu(event: Event) {
+      event.stopPropagation();
+      this.menuVisible = !this.menuVisible;
+      console.log('Menu Visible:', this.menuVisible);      
+    }
     selectedBrandId: number | null = null;
     selectedCarId: number | null = null;
     carsMenuItems: Array<{

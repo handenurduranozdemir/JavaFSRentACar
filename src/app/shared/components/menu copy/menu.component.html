@@ -1,17 +1,19 @@
 <div class="container">
-  <div *ngFor="let item of items" class="card" style="width: 18rem;">
-    <img src="assets/2023-suzuki-jimny-5-door.jpg" class="card-img-top" [alt]="item.title">
-    <div class="card-body">
-      <h5 class="card-title">{{ item.title }}</h5>
-      <!--<p class="card-text">{{ item.description }}</p>-->
-      <p class="card-text"> Description </p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item" *ngFor="let detail of item.details">{{ detail }}</li>
-    </ul>
-    <div class="card-body">
-      <a href="{{ item.link1.url }}" class="card-link">{{ item.link1.text }}</a>
-      <a href="{{ item.link2.url }}" class="card-link">{{ item.link2.text }}</a>
+  <div class="card-container">
+    <div *ngFor="let item of items" class="card" style="width: 18rem;">
+      <img src="assets/2023-suzuki-jimny-5-door.jpg" class="card-img-top" [alt]="item.title">
+      <div class="card-body">
+        <h5 class="card-title">{{ item.title }}</h5>
+        <!--<p class="card-text">{{ item.description }}</p>-->
+        <p class="card-text"> Description </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let detail of item.details">{{ detail }}</li>
+      </ul>
+      <div class="card-body">
+        <a href="{{ item.link1.url }}" class="card-link">{{ item.link1.text }}</a>
+        <a href="{{ item.link2.url }}" class="card-link">{{ item.link2.text }}</a>
+      </div>
     </div>
   </div>
 </div>

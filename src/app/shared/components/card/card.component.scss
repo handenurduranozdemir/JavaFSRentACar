@@ -1,3 +1,14 @@
 :host {
     display: block;
+
+    .card {
+      background-color: rgb(6, 122, 160);
+      
+    }
+
+    .rentbutton {
+      border-radius: 5px;
+      background-color: rgb(2, 47, 47);
+      color: white;
+    }
   }

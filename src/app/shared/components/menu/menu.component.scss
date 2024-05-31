@@ -1,3 +1,40 @@
-:host {
-    display: block;
-  }
+/* Container for the menu */
+.list-group {
+  position: fixed; /* Fixes the menu to the side of the page */
+  top: 150px; /* Adjust the top offset as needed */
+  left: 10px; /* Adjust the left offset to move the menu closer to the left edge */
+  width: 200px; /* Set a fixed width for the menu */
+  z-index: 1000; /* Ensure the menu stays on top of other elements */
+  overflow-y: scroll; /* Add vertical scrolling */
+}
+
+/* Menu item styles */
+.list-group-item {
+  margin-bottom: 5px; /* Add some space between buttons */
+  border-radius: 4px; /* Slightly round the corners */
+  padding: 10px 15px; /* Adjust padding for better touch/click area */
+  font-size: 20px; /* Increase font size for readability */
+  cursor: pointer; /* Change cursor to pointer to indicate clickable items */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover and active states */
+}
+
+/* Active state style */
+.list-group-item.active {
+  background-color: #007bff; /* Change the background color for the active item */
+  color: white; /* Change the text color for the active item */
+}
+
+/* Hover state style */
+.list-group-item:hover {
+  background-color: #0056b3; /* Slightly darker blue on hover */
+  color: white; /* Change the text color on hover */
+}
+
+button {
+  background-color: rgb(6, 122, 160);
+  border: 1px solid rgb(6, 122, 160);
+  border-radius: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
+  color:rgb(10, 1, 57)
+}
