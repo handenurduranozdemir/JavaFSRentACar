@@ -1,36 +1,54 @@
-<table appTable>
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Created Date</th>
-            <th scope="col"></th>
-        </tr>
-        <tr>
-            <th scope="col"></th>
-            <th scope="col">
-                <input type="text" (input)="applyFilter($event, 'name')" placeholder="Filter by Name">
-            </th>
-            <th scope="col">
-                <input type="text" (input)="applyFilter($event, 'createdDate')" placeholder="Filter by Created Date">
-            </th>
-            <th scope="col"></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let brand of filteredBrands; trackBy: trackById">
-            <th scope="row">{{ brand.id }}</th>
-            <td>{{ brand.name }}</td>
-            <td>{{ brand.createdDate }}</td>
-            <td>
-                <div class="d-flex justify-content-center">
-                    <app-button [routerLink]="['/management/brands/edit', brand.id]" variant="warning">Edit</app-button>
-                    <app-button class="ms-3" (click)="deleteBrand(brand.id!)" variant="danger">Delete</app-button>
-                </div>
-            </td>
-        </tr>
-        <tr *ngIf="filteredBrands.length === 0">
-            <td colspan="4" class="text-center">No brands available</td>
-        </tr>
-    </tbody>
-</table>
+<section class="py-3 py-md-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9 col-xl-12">
+          <div class="card widget-card border-light shadow-sm">
+            <div class="card-body p-4">
+              <h5 class="card-title widget-card-title mb-4">Brands List</h5>
+              <div class="table-responsive">
+                <table class="table table-borderless bsb-table-xl text-nowrap align-middle m-0" appTable>
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Created Date</th>
+                      <th scope="col"></th>
+                    </tr>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col"><input type="text" (input)="applyFilter($event, 'name')" placeholder="Filter by Name"></th>
+                      <th scope="col"><input type="text" (input)="applyFilter($event, 'createdDate')" placeholder="Filter by Created Date"></th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let brand of filteredBrands; trackBy: trackById">
+                      <th scope="row">{{ brand.id }}</th>
+                      <td>
+                        <h6 class="mb-1">{{ brand.name }}</h6>
+                        <span class="text-secondary fs-7">Name</span>
+                      </td>
+                      <td>
+                        <h6 class="mb-1">{{ brand.createdDate }}</h6>
+                        <span class="text-secondary fs-7">Created Date</span>
+                      </td>
+                      <td>
+                        <div class="d-flex justify-content-center">
+                          <app-button [routerLink]="['/management/brands/edit', brand.id]" variant="warning">Edit</app-button>
+                          <app-button class="ms-3" (click)="deleteBrand(brand.id!)" variant="danger">Delete</app-button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr *ngIf="filteredBrands.length === 0">
+                      <td colspan="4" class="text-center">No brands available</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

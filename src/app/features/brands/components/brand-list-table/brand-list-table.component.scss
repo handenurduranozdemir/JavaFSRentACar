@@ -1,3 +1,31 @@
 :host {
     display: block;
   }
+.widget-card {
+  border: 1px solid #ddd;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+}
+
+.widget-card-title {
+  font-weight: bold;
+}
+
+.bsb-table-xl th, .bsb-table-xl td {
+  padding: 1rem;
+}
+
+.bsb-table-xl th {
+  background-color: #f8f9fa;
+}
+
+.bsb-table-xl tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.fs-7 {
+  font-size: 0.875rem;
+}
+
+.text-secondary {
+  color: #6c757d !important;
+}
