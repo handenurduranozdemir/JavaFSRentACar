@@ -29,12 +29,12 @@ export const managementRoutes: Routes = [
             },
 
             {
-                path: 'brands/create', //localhost:4200/management/brands/create
+                path: 'brands/create', 
                 component: ManagementCreateBrandPageComponent,
             },
 
             {
-                path: 'brands/edit/:brandId', //localhost:4200/management/brands/edit/1 //// localhost:4200/management/brands/edit/2 //// :brandId , brandId isminde bir route parametresi tanımlar
+                path: 'brands/edit/:brandId', 
                 component: ManagementEditBrandPageComponent,
             },
 

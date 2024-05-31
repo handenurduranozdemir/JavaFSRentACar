@@ -6,24 +6,23 @@
     }
     
     .container {
-        //background-color: rgba(255, 255, 255, 0.9); /* Beyaz arka plan */
-        border: 0px solid #ddd; /* Border çizgisi */
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0.1); /* Gölgelendirme */
+        border: 0px solid #ddd; 
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.1); 
         padding: 20px;
         margin-top: 20px;
         
     }
     
     .container h1, .container h4, .container p {
-        color: #333; /* Yazı rengi */
+        color: #333; 
         
     }
     
     h1 {
-        color: rgb(10, 1, 57); /* Yazı rengi */
-        font-size: 5em; /* Yazı boyutu */
-        font-family: 'Ultra', serif; /* Kullanılacak font */
-        text-shadow: 4px 4px 4px #666; /* Gölgelendirme */
+        color: rgb(10, 1, 57); 
+        font-size: 5em; 
+        font-family: 'Ultra', serif; 
+        text-shadow: 4px 4px 4px #666; 
     }
 
     .rentacar {
